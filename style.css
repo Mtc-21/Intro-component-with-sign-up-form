@@ -1,0 +1,271 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      box-sizing: border-box;
+    }
+
+    *::after,
+    *::before {
+      box-sizing: inherit;
+    }
+
+    :root {
+      --red: hsl(0, 100%, 74%);
+      --green: hsl(154, 59%, 51%);
+      --blue: hsl(248, 32%, 49%);
+      --dark-blue: hsl(249, 10%, 26%);
+      --grayish-blue: hsl(246, 25%, 77%);
+    }
+
+    html,
+    body {
+      min-height: 100vh;
+    }
+
+    body {
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto 50px;
+      justify-content: center;
+      background: var(--red, hsl(0, 100%, 74%));
+      background-image: url("images/bg-intro-mobile.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto 100%;
+    }
+
+    main,
+    .form,
+    .header,
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    .header,
+    .content {
+      gap: 2rem;
+    }
+
+    main {
+      justify-self: center;
+      margin: 4rem 1.5rem;
+      gap: 2rem;
+    }
+
+    .message {
+      padding: 1rem;
+      background: var(--blue, hsl(248, 32%, 49%));
+    }
+
+    .message,
+    .title,
+    .description,
+    input[type="submit"] {
+      color: white;
+    }
+
+    .title,
+    .description,
+    .info,
+    .message {
+      text-align: center;
+    }
+
+    .title {
+      font-weight: 700;
+      font-size: 1.8rem;
+    }
+
+    .description,
+    .message {
+      font-weight: 400;
+    }
+
+    .message strong {
+      font-weight: 700;
+    }
+
+    .form,
+    .message {
+      box-shadow: 0 0.4rem rgba(0, 0, 0, 0.2);
+    }
+
+    .form {
+      flex: 0.6;
+      padding: 1rem;
+      background: white;
+    }
+
+    .form input,
+    .info {
+      padding: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    form span {
+      font-weight: 400;
+      font-style: italic;
+      font-size: 0.7rem;
+      color: var(--red,hsl(0, 100%, 74%));
+      text-align: right;
+      margin-bottom: 0.2rem;
+      display: none;
+      position: relative;
+    }
+
+    span::before {
+      position: absolute;
+      content: "";
+      top: -3rem;
+      right: 0.8rem;
+      width: 3rem;
+      height: 3rem;
+      background-image: url("images/icon-error.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    input,
+    .message,
+    .form {
+      border-radius: 0.5rem;
+    }
+
+    input:not(:nth-last-child(2)) {
+      border: 1px solid rgb(218, 214, 214);
+      color: var(--dark-blue, hsl(249, 10%, 26%));
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: transparent;
+    }
+
+    .error {
+      outline: solid 1px red;
+      color: red !important;
+    }
+
+
+    input:not(:nth-last-child(2)):focus {
+      outline: 1px solid;
+    }
+
+    input[type="submit"] {
+      background: var(--green, hsl(154, 59%, 51%));
+      border: none;
+      text-transform: uppercase;
+      box-shadow: 0 0.3rem hsl(154, 71%, 44%);
+    }
+
+    input[type="submit"]:hover {
+      background: hsl(154, 64%, 68%);
+    }
+
+
+    .info {
+      font-size: 0.7rem;
+      color: silver;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .info strong {
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: var(--red, hsl(0, 100%, 74%));
+    }
+
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    footer {
+      align-self: flex-end;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
+    }
+
+    .msg-modal {
+      padding: 2rem;
+      background: var(--green, hsl(154, 59%, 51%));
+      color: white;
+      position: relative;
+      box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.8);
+    }
+
+    .msg-modal i {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px white inset !important;
+    }
+
+
+    @media(min-width:500px) {
+      body {
+        background-image: url("images/bg-intro-desktop.png");
+         background-size: cover;
+      }
+    }
+
+    @media(min-width:768px) {
+      main {
+        max-width: 70rem;
+        flex-direction: row;
+      }
+
+      .header,
+      .content {
+        flex: 1;
+        justify-content: center;
+      }
+
+      .title,
+      .description {
+        text-align: left;
+      }
+
+      .title {
+        font-size: 2.8rem;
+      }
+
+      .form {
+        padding: 2.5rem;
+      }
+
+      .form input,
+      .info {
+        margin-bottom: 1.2rem;
+      }
+    }

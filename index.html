@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/21584bba56.js" crossorigin="anonymous"></script>
+  <title>Frontend Mentor | Intro component with sign up form</title>
+</head>
+
+<body>
+  <main>
+    <header class="header">
+      <h1 class="title">Learn to code by watching others
+      </h1>
+      <p class="description">See how experienced developers solve problems in real-time. Watching scripted tutorials is
+        great,
+        but understanding how developers think is invaluable.</p>
+    </header>
+    <section class="content">
+      <h2 class="message"><strong>it free 7 days</strong> then $20/mo. thereafter</h2>
+      <form class="form">
+        <input type="text" id="firstName" value="" placeholder="First Name">
+        <span>First Name cannot be empty, nor with blank spaces</span>
+        <input type="text" id="lastName" value="" placeholder="Last Name">
+        <span>Last Name cannot be empty, nor with blank spaces</span>
+        <input type="email" id="email" value="" placeholder="Email Address">
+        <span>Looks like this is not an email</span>
+        <input type="password" id="password" value="" placeholder="Password" minlength="5">
+        <span>Password cannot be empty, minlength 5</span>
+        <input type="submit" id="submit" value="Claim your free trial">
+        <p class="info">By clicking the button, you are agreeing to our <strong>Terms and Services</strong></p>
+      </form>
+    </section>
+  </main>
+  <div class="modal">
+    <div class="msg-modal">
+      <i class="fas fa-times close"></i>
+      <p>Successfully</p>
+    </div>
+  </div>
+  <footer>
+    <p class="attribution">
+      Challenge by <a
+        href="https://www.frontendmentor.io/challenges/intro-component-with-signup-form-5cf91bd49edda32581d28fd1/hub/intro-component-with-signup-form-Lk01uv1vx"
+        target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Martha Mendoza</a>.
+    </p>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>
